@@ -6,6 +6,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
   </head>
-  <body></body>
+  <body>
+    <ol id="elem">
+      <li>Hello</li>
+      <li>World</li>
+    </ol>
+    <script>
+      const ol = document.querySelector("#elem");
+      // console.log(ol);
+      let inputWords = prompt("Enter Words:");
+
+      while (inputWords) {
+        const newLi = document.createElement("li");
+        newLi.innerText = inputWords;
+        ol.append(newLi);
+        inputWords = prompt("Enter Words:");
+      }
+
+      function clear(elem) {
+        // const ol = document.querySelector("#" + elem);
+        const li = ol.querySelectorAll("li");
+        li.forEach((el) => el.remove());
+      }
+
+      clear(elem); // clears the list
+    </script>
+  </body>
   <script src="main.js"></script>
 </html>
